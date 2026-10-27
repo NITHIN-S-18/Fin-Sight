@@ -1,0 +1,381 @@
+{
+  "model_version": "financial_subscription_usage-v1.0",
+  "dataset": {
+    "users": 4479,
+    "subscriptions": 8701,
+    "observation_snapshots": 47246,
+    "date_range": [
+      "2023-04",
+      "2024-09"
+    ]
+  },
+  "target": {
+    "observation_history": "At least three observed subscription months through the cutoff.",
+    "future_window": "The three calendar months after the cutoff.",
+    "ACTIVE": "Successful payment evidence in all three future months.",
+    "MODERATE": "Successful payment evidence in one or two future months.",
+    "UNDER_UTILIZED": "No successful payment evidence in the future window.",
+    "class_counts": {
+      "MODERATE": 21106,
+      "ACTIVE": 19557,
+      "UNDER_UTILIZED": 6583
+    },
+    "class_percentages": {
+      "MODERATE": 44.67,
+      "ACTIVE": 41.39,
+      "UNDER_UTILIZED": 13.93
+    }
+  },
+  "features": [
+    "payment_count",
+    "successful_payment_count",
+    "failed_payment_count",
+    "payment_success_rate",
+    "average_payment_amount",
+    "payment_amount_volatility",
+    "amount_consistency",
+    "amount_trend",
+    "days_since_last_payment",
+    "mean_payment_gap",
+    "longest_payment_gap",
+    "recurring_interval_consistency",
+    "observed_billing_cycles",
+    "merchant_continuity",
+    "merchant_stability",
+    "category_consistency",
+    "monthly_equivalent_amount",
+    "subscription_age_months",
+    "amount_change_count",
+    "autopay_signal",
+    "total_active_subscriptions",
+    "total_monthly_commitments",
+    "subscription_burden_ratio",
+    "discretionary_spending",
+    "income_stability",
+    "commitment_ratio"
+  ],
+  "temporal_split": {
+    "train": {
+      "dates": [
+        "2023-04",
+        "2024-03"
+      ],
+      "samples": 30168,
+      "users": 4357,
+      "subscriptions": 8053
+    },
+    "validation": {
+      "dates": [
+        "2024-04",
+        "2024-06"
+      ],
+      "samples": 8377,
+      "users": 4424,
+      "subscriptions": 8377
+    },
+    "test": {
+      "dates": [
+        "2024-07",
+        "2024-09"
+      ],
+      "samples": 8701,
+      "users": 4479,
+      "subscriptions": 8701
+    }
+  },
+  "baseline": {
+    "validation": {
+      "accuracy": 0.5081,
+      "balanced_accuracy": 0.5136,
+      "precision_macro": 0.5167,
+      "recall_macro": 0.5136,
+      "f1_macro": 0.4755,
+      "confusion_matrix": [
+        [
+          404,
+          2750,
+          151
+        ],
+        [
+          287,
+          2968,
+          306
+        ],
+        [
+          324,
+          303,
+          884
+        ]
+      ],
+      "roc_auc_ovr_macro": null,
+      "pr_auc_macro": null
+    },
+    "test": {
+      "accuracy": 0.5194,
+      "balanced_accuracy": 0.5276,
+      "precision_macro": 0.5278,
+      "recall_macro": 0.5276,
+      "f1_macro": 0.4842,
+      "confusion_matrix": [
+        [
+          354,
+          2843,
+          127
+        ],
+        [
+          211,
+          3052,
+          356
+        ],
+        [
+          333,
+          312,
+          1113
+        ]
+      ],
+      "roc_auc_ovr_macro": null,
+      "pr_auc_macro": null
+    }
+  },
+  "ml": {
+    "validation": {
+      "accuracy": 0.5749,
+      "balanced_accuracy": 0.6091,
+      "precision_macro": 0.6826,
+      "recall_macro": 0.6091,
+      "f1_macro": 0.5978,
+      "confusion_matrix": [
+        [
+          2886,
+          408,
+          11
+        ],
+        [
+          2682,
+          848,
+          31
+        ],
+        [
+          244,
+          185,
+          1082
+        ]
+      ],
+      "roc_auc_ovr_macro": 0.7722,
+      "pr_auc_macro": 0.6699
+    },
+    "test": {
+      "accuracy": 0.5796,
+      "balanced_accuracy": 0.6127,
+      "precision_macro": 0.6768,
+      "recall_macro": 0.6127,
+      "f1_macro": 0.5991,
+      "confusion_matrix": [
+        [
+          2900,
+          412,
+          12
+        ],
+        [
+          2718,
+          866,
+          35
+        ],
+        [
+          243,
+          238,
+          1277
+        ]
+      ],
+      "roc_auc_ovr_macro": 0.7843,
+      "pr_auc_macro": 0.6771
+    }
+  },
+  "unseen_user": {
+    "development_users": 3135,
+    "validation_users": 672,
+    "unseen_users": 672,
+    "overlap": {
+      "development_validation": 0,
+      "development_unseen": 0,
+      "validation_unseen": 0
+    },
+    "ml": {
+      "accuracy": 0.5858,
+      "balanced_accuracy": 0.6142,
+      "precision_macro": 0.6808,
+      "recall_macro": 0.6142,
+      "f1_macro": 0.6307,
+      "confusion_matrix": [
+        [
+          2042,
+          728,
+          25
+        ],
+        [
+          1747,
+          1296,
+          27
+        ],
+        [
+          149,
+          142,
+          647
+        ]
+      ],
+      "roc_auc_ovr_macro": 0.7542,
+      "pr_auc_macro": 0.6683
+    },
+    "baseline": {
+      "accuracy": 0.5017,
+      "balanced_accuracy": 0.489,
+      "precision_macro": 0.5048,
+      "recall_macro": 0.489,
+      "f1_macro": 0.4749,
+      "confusion_matrix": [
+        [
+          647,
+          2027,
+          121
+        ],
+        [
+          497,
+          2314,
+          259
+        ],
+        [
+          244,
+          242,
+          452
+        ]
+      ],
+      "roc_auc_ovr_macro": null,
+      "pr_auc_macro": null
+    }
+  },
+  "leakage_audit": {
+    "payment_count": "YES",
+    "successful_payment_count": "YES",
+    "failed_payment_count": "YES",
+    "payment_success_rate": "YES",
+    "average_payment_amount": "YES",
+    "payment_amount_volatility": "YES",
+    "amount_consistency": "YES",
+    "amount_trend": "YES",
+    "days_since_last_payment": "YES",
+    "mean_payment_gap": "YES",
+    "longest_payment_gap": "YES",
+    "recurring_interval_consistency": "YES",
+    "observed_billing_cycles": "YES",
+    "merchant_continuity": "YES",
+    "merchant_stability": "YES",
+    "category_consistency": "YES",
+    "monthly_equivalent_amount": "YES",
+    "subscription_age_months": "YES",
+    "amount_change_count": "YES",
+    "autopay_signal": "YES",
+    "total_active_subscriptions": "YES",
+    "total_monthly_commitments": "YES",
+    "subscription_burden_ratio": "YES",
+    "discretionary_spending": "YES",
+    "income_stability": "YES",
+    "commitment_ratio": "YES",
+    "future_outcome_in_features": "NO"
+  },
+  "artifact": {
+    "path": "backend\\app\\ml\\saved_models\\financial_subscription_usage\\v1.0\\artifact.pkl",
+    "feature_schema": [
+      "payment_count",
+      "successful_payment_count",
+      "failed_payment_count",
+      "payment_success_rate",
+      "average_payment_amount",
+      "payment_amount_volatility",
+      "amount_consistency",
+      "amount_trend",
+      "days_since_last_payment",
+      "mean_payment_gap",
+      "longest_payment_gap",
+      "recurring_interval_consistency",
+      "observed_billing_cycles",
+      "merchant_continuity",
+      "merchant_stability",
+      "category_consistency",
+      "monthly_equivalent_amount",
+      "subscription_age_months",
+      "amount_change_count",
+      "autopay_signal",
+      "total_active_subscriptions",
+      "total_monthly_commitments",
+      "subscription_burden_ratio",
+      "discretionary_spending",
+      "income_stability",
+      "commitment_ratio"
+    ],
+    "reloadable": true
+  },
+  "acceptance": {
+    "validation_balanced_accuracy_improvement": 0.0955,
+    "test_balanced_accuracy_improvement": 0.0851,
+    "rule": "Validation improvement >= 0.05 AND test improvement >= 0.02 AND macro F1 does not materially degrade.",
+    "decision": "ML_ACCEPTED"
+  },
+  "limitations": [
+    "Transactional engagement is not actual application usage.",
+    "Manual USER_ADDED recurring records are excluded from ML usage inference.",
+    "No genuine cancellation lifecycle label exists in the reference ledger; labels are observed future payment behaviour."
+  ],
+  "model": {
+    "algorithm": "HistGradientBoostingClassifier",
+    "preprocessing": "SimpleImputer(strategy=median) in a pipeline; numeric features retained without probability exposure",
+    "random_seed": 42,
+    "class_balancing": "inverse-frequency sample weights fitted on training rows only",
+    "hyperparameters": {
+      "learning_rate": 0.08,
+      "max_iter": 180,
+      "max_leaf_nodes": 15,
+      "l2_regularization": 0.2
+    }
+  },
+  "generalization": {
+    "classification": "MODERATE",
+    "criterion": "unseen balanced accuracy >= 0.60 and improvement over baseline >= 0.05",
+    "unseen_balanced_accuracy": 0.6142,
+    "baseline_balanced_accuracy": 0.489,
+    "improvement": 0.1252
+  },
+  "live_inference": {
+    "status": "PASS",
+    "endpoint": "GET /api/v1/recurring-payments",
+    "detected_subscription_status": "ACTIVE",
+    "probability_exposed": false,
+    "user_added_ml_inference": false
+  },
+  "cancellation_simulation": {
+    "status": "PASS",
+    "endpoint": "POST /api/v1/recurring-payments/{id}/simulate-cancellation",
+    "cancellation_applied": false,
+    "arithmetic_source": "UnifiedCommitmentService plus existing CashFlowForecastService"
+  },
+  "tenant_isolation": {
+    "status": "PASS",
+    "cross_user_get_status": 404,
+    "cross_user_simulation_status": 404,
+    "identity_source": "JWT"
+  },
+  "tests": {
+    "pass": [
+      "12 focused Model 3/recurring tests",
+      "authenticated intelligence and cancellation smoke test",
+      "artifact reload",
+      "framework bundle reload",
+      "python -m compileall app scripts",
+      "git diff --check",
+      "frontend npm run build"
+    ],
+    "fail": [
+      "full backend pytest: 6 pre-existing unrelated failures (Google GenAI dependency, profile synchronization, Copilot error/isolation flows)"
+    ],
+    "blocked": []
+  }
+}

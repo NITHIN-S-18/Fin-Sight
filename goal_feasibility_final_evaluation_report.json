@@ -1,0 +1,365 @@
+{
+  "model": "financial_goal_feasibility",
+  "model_version": "model-2-phase-c-v2",
+  "dataset_version": "ml_dataset_v3",
+  "scenario_version": "phase-c-goal-contract-v1",
+  "production_status": "accepted_ml",
+  "ml_status": "accepted",
+  "probability_exposed": false,
+  "label_definition": "1 only when actual successful positive future income minus the historical pre-goal committed-expense mean and actual successful positive future variable spending is at least the required monthly saving in every one of the six future months; commitment reductions cannot create a positive label.",
+  "scenario_policy": "six contiguous history months followed by six contiguous future months; three observed-buffer savings tiers per window; timeframe months are 12/6/3 for conservative/moderate/ambitious tiers and goal_amount is required_monthly_saving multiplied by timeframe_months",
+  "scenario_schema": [
+    "goal_amount",
+    "timeframe_months",
+    "required_monthly_saving"
+  ],
+  "scenario_distribution": {
+    "timeframe_months": {
+      "3": 65000,
+      "6": 65000,
+      "12": 65000
+    },
+    "goal_amount": {
+      "min": 3.0,
+      "max": 2433179.04,
+      "mean": 372023.54
+    },
+    "required_monthly_saving": {
+      "min": 1.0,
+      "max": 209100.85,
+      "mean": 54647.96
+    }
+  },
+  "split": {
+    "train": {
+      "scenario_count": 94500,
+      "unique_users": 3500,
+      "feature_month_range": [
+        "2023-06",
+        "2024-02"
+      ],
+      "future_month_range": [
+        "2023-07",
+        "2024-08"
+      ],
+      "chronologically_ordered": true
+    },
+    "validation": {
+      "scenario_count": 4500,
+      "unique_users": 750,
+      "feature_month_range": [
+        "2024-03",
+        "2024-04"
+      ],
+      "future_month_range": [
+        "2024-04",
+        "2024-10"
+      ],
+      "chronologically_ordered": true
+    },
+    "test": {
+      "scenario_count": 4500,
+      "unique_users": 750,
+      "feature_month_range": [
+        "2024-05",
+        "2024-06"
+      ],
+      "future_month_range": [
+        "2024-06",
+        "2024-12"
+      ],
+      "chronologically_ordered": true
+    }
+  },
+  "user_disjoint": true,
+  "overlap": {
+    "user_overlap_counts": {
+      "train_vs_validation": 0,
+      "train_vs_test": 0,
+      "validation_vs_test": 0
+    },
+    "feature_month_overlap_counts": {
+      "train_vs_validation": 0,
+      "train_vs_test": 0,
+      "validation_vs_test": 0
+    },
+    "unseen_test_users": 750,
+    "unseen_validation_users": 750
+  },
+  "class_balance": {
+    "positive_rate_by_split": {
+      "train": 0.2732,
+      "validation": 0.2707,
+      "test": 0.2373
+    },
+    "acceptable_range": [
+      0.1,
+      0.9
+    ],
+    "passes_balance_gate": true
+  },
+  "leakage": {
+    "scenario_count": 195000,
+    "user_count": 5000,
+    "feature_columns": [
+      "history_income_mean",
+      "history_income_std",
+      "history_committed_mean",
+      "history_variable_mean",
+      "history_buffer_mean",
+      "history_buffer_min",
+      "history_buffer_std",
+      "history_income_trend",
+      "history_spending_trend",
+      "history_success_rate",
+      "required_monthly_saving"
+    ],
+    "future_columns_used_only_for_labels": [
+      "income",
+      "committed",
+      "variable",
+      "buffer"
+    ],
+    "required_saving_tiers": {
+      "conservative": {
+        "historical_buffer_quantile": 0.1,
+        "interpretation": "conservative required savings threshold from the scenario's six-month observed buffer range"
+      },
+      "moderate": {
+        "historical_buffer_quantile": 0.3,
+        "interpretation": "moderate required savings threshold from the scenario's six-month observed buffer range"
+      },
+      "ambitious": {
+        "historical_buffer_quantile": 0.5,
+        "interpretation": "ambitious required savings threshold from the scenario's six-month observed buffer range"
+      }
+    },
+    "timeframe_months_by_tier": {
+      "conservative": 12,
+      "moderate": 6,
+      "ambitious": 3
+    },
+    "scenario_schema": [
+      "goal_amount",
+      "timeframe_months",
+      "required_monthly_saving"
+    ],
+    "goal_amount_formula": "goal_amount = required_monthly_saving * timeframe_months",
+    "feature_future_boundary_rule": "features use months <= feature_month; labels use the next six calendar months only",
+    "future_data_in_features": false,
+    "model_1_formula_used_for_labels": false,
+    "scenario_fingerprint": "9097f2ce060092aa1ba73681432ea40fc978341a91314bd17c6ba7fb20a01ec5"
+  },
+  "label_distribution": {
+    "0": 143211,
+    "1": 51789
+  },
+  "baseline": {
+    "method": "history_mean_buffer_threshold",
+    "validation": {
+      "count": 4500,
+      "accuracy": 0.4231,
+      "balanced_accuracy": 0.5968,
+      "precision": 0.3165,
+      "recall": 0.9754,
+      "f1": 0.4779,
+      "positive_rate": 0.2707,
+      "confusion_matrix": [
+        [
+          716,
+          2566
+        ],
+        [
+          30,
+          1188
+        ]
+      ],
+      "roc_auc": null,
+      "pr_auc": null,
+      "brier": null
+    }
+  },
+  "candidates": {
+    "HistGradientBoostingClassifier": {
+      "validation": {
+        "count": 4500,
+        "accuracy": 0.8031,
+        "balanced_accuracy": 0.6848,
+        "precision": 0.7345,
+        "recall": 0.4269,
+        "f1": 0.54,
+        "positive_rate": 0.2707,
+        "confusion_matrix": [
+          [
+            3094,
+            188
+          ],
+          [
+            698,
+            520
+          ]
+        ],
+        "roc_auc": 0.8218,
+        "pr_auc": 0.6838,
+        "brier": 0.1397
+      }
+    }
+  },
+  "xgboost": {
+    "installed": false,
+    "reason": "xgboost is not installed"
+  },
+  "acceptance": {
+    "criterion": "balanced classes, validation balanced_accuracy improvement >= 0.05, and test balanced_accuracy improvement >= 0.02",
+    "strongest_candidate": "HistGradientBoostingClassifier",
+    "improvement_over_baseline": 0.088,
+    "selected": "HistGradientBoostingClassifier",
+    "quality_sufficient": true
+  },
+  "generalization_rubric": {
+    "strong": "unseen-user balanced accuracy >= 0.70 and ML improvement over unseen-user baseline >= 0.05",
+    "moderate": "unseen-user balanced accuracy >= 0.60 and ML improvement over unseen-user baseline >= 0.05",
+    "limited": "unseen-user balanced accuracy >= 0.55 or ML improvement over baseline between 0.02 and 0.05",
+    "not_proven": "below those thresholds or insufficient evaluation evidence"
+  },
+  "generalization": {
+    "classification": "MODERATE",
+    "unseen_user_ml_balanced_accuracy": 0.6491,
+    "unseen_user_baseline_balanced_accuracy": 0.5142,
+    "improvement_over_baseline": 0.1349
+  },
+  "test": {
+    "selected_model": "HistGradientBoostingClassifier",
+    "metrics": {
+      "count": 4500,
+      "accuracy": 0.8289,
+      "balanced_accuracy": 0.6992,
+      "precision": 0.7231,
+      "recall": 0.4522,
+      "f1": 0.5565,
+      "positive_rate": 0.2373,
+      "confusion_matrix": [
+        [
+          3247,
+          185
+        ],
+        [
+          585,
+          483
+        ]
+      ],
+      "roc_auc": 0.8185,
+      "pr_auc": 0.6607,
+      "brier": 0.1296
+    },
+    "baseline_metrics": {
+      "count": 4500,
+      "accuracy": 0.3922,
+      "balanced_accuracy": 0.5948,
+      "precision": 0.2784,
+      "recall": 0.9803,
+      "f1": 0.4336,
+      "positive_rate": 0.2373,
+      "confusion_matrix": [
+        [
+          718,
+          2714
+        ],
+        [
+          21,
+          1047
+        ]
+      ],
+      "roc_auc": null,
+      "pr_auc": null,
+      "brier": null
+    },
+    "unseen_user_evaluation": {
+      "ml": {
+        "unseen_user_count": 750,
+        "model": "HistGradientBoostingClassifier",
+        "metrics_on_unseen_users": {
+          "count": 750,
+          "accuracy": 0.7947,
+          "balanced_accuracy": 0.6491,
+          "precision": 0.6569,
+          "recall": 0.3602,
+          "f1": 0.4653,
+          "positive_rate": 0.248,
+          "confusion_matrix": [
+            [
+              529,
+              35
+            ],
+            [
+              119,
+              67
+            ]
+          ],
+          "roc_auc": null,
+          "pr_auc": null,
+          "brier": null
+        }
+      },
+      "baseline": {
+        "unseen_user_count": 750,
+        "model": "deterministic_history_baseline",
+        "metrics_on_unseen_users": {
+          "count": 750,
+          "accuracy": 0.2693,
+          "balanced_accuracy": 0.5142,
+          "precision": 0.2534,
+          "recall": 1.0,
+          "f1": 0.4043,
+          "positive_rate": 0.248,
+          "confusion_matrix": [
+            [
+              16,
+              548
+            ],
+            [
+              0,
+              186
+            ]
+          ],
+          "roc_auc": null,
+          "pr_auc": null,
+          "brier": null
+        }
+      }
+    }
+  },
+  "artifact": {
+    "persisted": true,
+    "path": "app\\ml\\saved_models\\goal_feasibility\\model-2-phase-c-v2.pkl"
+  },
+  "live_inference_verification": {
+    "static_contract": "PASS",
+    "artifact_path": "app\\ml\\saved_models\\goal_feasibility\\model-2-phase-c-v2.pkl",
+    "realistic_requests": [
+      {
+        "goal_amount": 30000,
+        "timeframe_months": 3
+      },
+      {
+        "goal_amount": 60000,
+        "timeframe_months": 6
+      },
+      {
+        "goal_amount": 120000,
+        "timeframe_months": 12
+      }
+    ],
+    "authenticated_http": "BLOCKED \u2014 PostgreSQL unavailable"
+  },
+  "tenant_isolation_verification": {
+    "static_contract": "PASS",
+    "authenticated_runtime": "BLOCKED \u2014 PostgreSQL unavailable"
+  },
+  "final_decision": "MODEL 2 \u2014 NOT LOCKED",
+  "final_blockers": [
+    "Authenticated HTTP verification requires PostgreSQL and was blocked.",
+    "Runtime tenant-isolation verification requires PostgreSQL and was blocked."
+  ],
+  "generated_at": "2026-10-07T12:07:37.233526+00:00"
+}

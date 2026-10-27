@@ -1,0 +1,251 @@
+user_id,persona,income_type,monthly_financial_capacity,age_group,city
+U001,Self-Employed Users,Business,156000,25-34,Jaipur
+U002,Self-Employed Users,Business,71500,35-44,Jaipur
+U003,Gig Workers,Variable,45000,31-40,Bengaluru
+U004,Students,Allowance,12000,18-24,Bengaluru
+U005,Gig Workers,Variable,48500,31-40,Chennai
+U006,Self-Employed Users,Business,57000,35-44,Surat
+U007,Salaried Professionals,Fixed,92000,22-34,Delhi
+U008,High Income Professionals,Fixed,337500,28-34,Bengaluru
+U009,Self-Employed Users,Business,57500,25-34,Coimbatore
+U010,Salaried Professionals,Fixed,48500,35-44,Bengaluru
+U011,Gig Workers,Variable,58000,31-40,Bengaluru
+U012,Financially Stressed Users,Variable,17000,35-44,Mumbai
+U013,Financially Stressed Users,Variable,33500,45-54,Mumbai
+U014,Salaried Professionals,Fixed,66000,35-44,Bengaluru
+U015,High Income Professionals,Fixed,263500,45-54,Delhi
+U016,Students,Allowance,15500,18-24,Mysuru
+U017,Salaried Professionals,Fixed,51000,35-44,Bengaluru
+U018,Financially Stressed Users,Variable,20000,35-44,Pune
+U019,Salaried Professionals,Fixed,62000,22-34,Gurugram
+U020,Retired Users,Pension,27500,55-64,Chennai
+U021,Gig Workers,Variable,49000,21-30,Ahmedabad
+U022,Salaried Professionals,Fixed,96000,22-34,Chennai
+U023,Self-Employed Users,Business,160000,45-54,Surat
+U024,Gig Workers,Variable,25000,21-30,Ahmedabad
+U025,Salaried Professionals,Fixed,39500,35-44,Chennai
+U026,Salaried Professionals,Fixed,40000,22-34,Noida
+U027,Gig Workers,Variable,44500,31-40,Pune
+U028,Students,Allowance,24000,18-24,Pune
+U029,Gig Workers,Variable,35500,21-30,Delhi
+U030,Salaried Professionals,Fixed,109000,35-44,Gurugram
+U031,Students,Allowance,17000,18-24,Pune
+U032,Self-Employed Users,Business,136000,35-44,Indore
+U033,Salaried Professionals,Fixed,89000,35-44,Noida
+U034,High Income Professionals,Fixed,181500,28-34,Hyderabad
+U035,Gig Workers,Variable,46500,31-40,Mumbai
+U036,Self-Employed Users,Business,55500,25-34,Indore
+U037,High Income Professionals,Fixed,287000,28-34,Delhi
+U038,Gig Workers,Variable,44500,21-30,Bengaluru
+U039,Retired Users,Pension,74500,65+,Bengaluru
+U040,Salaried Professionals,Fixed,90500,22-34,Chennai
+U041,Salaried Professionals,Fixed,83000,35-44,Pune
+U042,Financially Stressed Users,Variable,13000,45-54,Indore
+U043,Salaried Professionals,Fixed,84000,22-34,Bengaluru
+U044,Gig Workers,Variable,27000,21-30,Bengaluru
+U045,Gig Workers,Variable,27000,21-30,Gurugram
+U046,Financially Stressed Users,Variable,37000,25-34,Mumbai
+U047,Salaried Professionals,Fixed,39500,35-44,Mumbai
+U048,Self-Employed Users,Business,145000,25-34,Ahmedabad
+U049,Gig Workers,Variable,29500,31-40,Delhi
+U050,Self-Employed Users,Business,61500,45-54,Delhi
+U051,Students,Allowance,8500,18-24,Pune
+U052,Gig Workers,Variable,54000,21-30,Mumbai
+U053,Students,Allowance,9000,18-24,Delhi
+U054,Students,Allowance,12000,18-24,Kota
+U055,Salaried Professionals,Fixed,69500,35-44,Delhi
+U056,Students,Allowance,21000,18-24,Noida
+U057,Retired Users,Pension,46500,55-64,Pune
+U058,Self-Employed Users,Business,59000,35-44,Delhi
+U059,Salaried Professionals,Fixed,110500,22-34,Gurugram
+U060,Self-Employed Users,Business,136000,25-34,Bengaluru
+U061,Salaried Professionals,Fixed,61000,35-44,Noida
+U062,Salaried Professionals,Fixed,81500,22-34,Hyderabad
+U063,Salaried Professionals,Fixed,51500,22-34,Pune
+U064,Students,Allowance,21500,18-24,Kota
+U065,Retired Users,Pension,79000,65+,Chennai
+U066,High Income Professionals,Fixed,172500,35-44,Bengaluru
+U067,Salaried Professionals,Fixed,76000,22-34,Bengaluru
+U068,High Income Professionals,Fixed,244000,35-44,Mumbai
+U069,Gig Workers,Variable,35000,21-30,Gurugram
+U070,Gig Workers,Variable,24500,21-30,Delhi
+U071,Self-Employed Users,Business,96000,45-54,Surat
+U072,Students,Allowance,21500,18-24,Pune
+U073,Salaried Professionals,Fixed,64000,22-34,Noida
+U074,Students,Allowance,12000,18-24,Pune
+U075,Retired Users,Pension,63000,65+,Nagpur
+U076,High Income Professionals,Fixed,213500,28-34,Bengaluru
+U077,High Income Professionals,Fixed,250000,45-54,Gurugram
+U078,Retired Users,Pension,68500,55-64,Chennai
+U079,Salaried Professionals,Fixed,40000,22-34,Chennai
+U080,Students,Allowance,24500,18-24,Noida
+U081,Gig Workers,Variable,30000,21-30,Delhi
+U082,Financially Stressed Users,Variable,24000,25-34,Bengaluru
+U083,Salaried Professionals,Fixed,61500,22-34,Hyderabad
+U084,Financially Stressed Users,Variable,43500,25-34,Lucknow
+U085,Self-Employed Users,Business,69000,35-44,Indore
+U086,Financially Stressed Users,Variable,25500,45-54,Bhopal
+U087,Gig Workers,Variable,35000,31-40,Hyderabad
+U088,Salaried Professionals,Fixed,54000,35-44,Gurugram
+U089,High Income Professionals,Fixed,314500,55-64,Bengaluru
+U090,Self-Employed Users,Business,157000,45-54,Coimbatore
+U091,Self-Employed Users,Business,172500,35-44,Ahmedabad
+U092,Self-Employed Users,Business,90500,35-44,Delhi
+U093,Financially Stressed Users,Variable,14500,45-54,Chennai
+U094,Students,Allowance,21000,18-24,Hyderabad
+U095,High Income Professionals,Fixed,286500,35-44,Mumbai
+U096,Salaried Professionals,Fixed,56500,35-44,Gurugram
+U097,Salaried Professionals,Fixed,106500,22-34,Chennai
+U098,Salaried Professionals,Fixed,71500,35-44,Noida
+U099,High Income Professionals,Fixed,149000,35-44,Mumbai
+U100,Salaried Professionals,Fixed,85500,22-34,Kolkata
+U101,Students,Allowance,12000,18-24,Kota
+U102,Salaried Professionals,Fixed,58500,35-44,Gurugram
+U103,Students,Allowance,17000,18-24,Noida
+U104,Gig Workers,Variable,33500,21-30,Pune
+U105,Self-Employed Users,Business,176000,35-44,Delhi
+U106,Salaried Professionals,Fixed,55000,22-34,Hyderabad
+U107,High Income Professionals,Fixed,274000,55-64,Gurugram
+U108,Salaried Professionals,Fixed,107000,22-34,Pune
+U109,Gig Workers,Variable,32000,31-40,Pune
+U110,Students,Allowance,15500,18-24,Bengaluru
+U111,Retired Users,Pension,52500,65+,Pune
+U112,Students,Allowance,21500,18-24,Noida
+U113,Students,Allowance,19000,18-24,Pune
+U114,Students,Allowance,18500,18-24,Noida
+U115,Gig Workers,Variable,53000,31-40,Ahmedabad
+U116,Students,Allowance,15500,18-24,Mysuru
+U117,High Income Professionals,Fixed,179500,35-44,Pune
+U118,Students,Allowance,11000,18-24,Bengaluru
+U119,Self-Employed Users,Business,80000,35-44,Coimbatore
+U120,Salaried Professionals,Fixed,84500,35-44,Noida
+U121,Students,Allowance,17000,18-24,Mysuru
+U122,Self-Employed Users,Business,178500,45-54,Mumbai
+U123,Students,Allowance,11000,18-24,Noida
+U124,Gig Workers,Variable,36500,21-30,Hyderabad
+U125,Salaried Professionals,Fixed,103000,22-34,Mumbai
+U126,Gig Workers,Variable,24000,21-30,Gurugram
+U127,Self-Employed Users,Business,114000,35-44,Mumbai
+U128,Salaried Professionals,Fixed,64500,35-44,Delhi
+U129,High Income Professionals,Fixed,347000,55-64,Hyderabad
+U130,Students,Allowance,17500,18-24,Mysuru
+U131,Students,Allowance,8000,18-24,Chennai
+U132,Financially Stressed Users,Variable,30500,45-54,Delhi
+U133,Self-Employed Users,Business,102000,25-34,Indore
+U134,Students,Allowance,16500,18-24,Delhi
+U135,Financially Stressed Users,Variable,18500,45-54,Pune
+U136,Salaried Professionals,Fixed,73000,35-44,Pune
+U137,Salaried Professionals,Fixed,117500,35-44,Gurugram
+U138,Financially Stressed Users,Variable,45000,45-54,Bengaluru
+U139,Students,Allowance,12500,18-24,Pune
+U140,Self-Employed Users,Business,164500,25-34,Ahmedabad
+U141,Retired Users,Pension,31500,65+,Pune
+U142,Salaried Professionals,Fixed,108500,22-34,Chennai
+U143,Salaried Professionals,Fixed,86500,22-34,Chennai
+U144,Salaried Professionals,Fixed,87000,35-44,Chennai
+U145,Salaried Professionals,Fixed,100500,22-34,Gurugram
+U146,High Income Professionals,Fixed,222000,35-44,Bengaluru
+U147,Gig Workers,Variable,43500,21-30,Delhi
+U148,Students,Allowance,12000,18-24,Mysuru
+U149,Gig Workers,Variable,56500,21-30,Mumbai
+U150,Gig Workers,Variable,56000,31-40,Hyderabad
+U151,Gig Workers,Variable,24500,31-40,Delhi
+U152,Salaried Professionals,Fixed,79000,22-34,Delhi
+U153,Retired Users,Pension,53500,65+,Bengaluru
+U154,Retired Users,Pension,58500,65+,Mysuru
+U155,Gig Workers,Variable,25500,31-40,Mumbai
+U156,Salaried Professionals,Fixed,104000,35-44,Bengaluru
+U157,Salaried Professionals,Fixed,81000,22-34,Gurugram
+U158,Gig Workers,Variable,47500,21-30,Mumbai
+U159,Retired Users,Pension,63500,65+,Thiruvananthapuram
+U160,Students,Allowance,8000,18-24,Hyderabad
+U161,Students,Allowance,21500,18-24,Chennai
+U162,High Income Professionals,Fixed,183500,55-64,Kolkata
+U163,Gig Workers,Variable,39000,31-40,Bengaluru
+U164,Financially Stressed Users,Variable,14500,25-34,Bengaluru
+U165,Salaried Professionals,Fixed,108000,35-44,Chennai
+U166,Students,Allowance,24000,18-24,Bengaluru
+U167,Students,Allowance,15000,18-24,Bengaluru
+U168,Students,Allowance,15000,18-24,Hyderabad
+U169,Gig Workers,Variable,28500,21-30,Hyderabad
+U170,Salaried Professionals,Fixed,89500,22-34,Chennai
+U171,High Income Professionals,Fixed,126000,55-64,Bengaluru
+U172,Self-Employed Users,Business,158000,45-54,Ahmedabad
+U173,Salaried Professionals,Fixed,92500,35-44,Noida
+U174,Students,Allowance,9500,18-24,Mysuru
+U175,Self-Employed Users,Business,55000,25-34,Delhi
+U176,Gig Workers,Variable,55500,21-30,Mumbai
+U177,High Income Professionals,Fixed,331000,55-64,Bengaluru
+U178,High Income Professionals,Fixed,157000,35-44,Gurugram
+U179,Salaried Professionals,Fixed,52500,35-44,Delhi
+U180,Self-Employed Users,Business,171000,45-54,Jaipur
+U181,Salaried Professionals,Fixed,82500,22-34,Chennai
+U182,Gig Workers,Variable,58000,31-40,Pune
+U183,Gig Workers,Variable,42000,21-30,Ahmedabad
+U184,Students,Allowance,20500,18-24,Hyderabad
+U185,High Income Professionals,Fixed,127000,55-64,Delhi
+U186,Students,Allowance,10500,18-24,Chennai
+U187,Self-Employed Users,Business,90500,25-34,Bengaluru
+U188,Salaried Professionals,Fixed,42000,35-44,Bengaluru
+U189,Students,Allowance,19000,18-24,Mysuru
+U190,Salaried Professionals,Fixed,73500,35-44,Chennai
+U191,Students,Allowance,21000,18-24,Chennai
+U192,Gig Workers,Variable,29000,21-30,Mumbai
+U193,Students,Allowance,20000,18-24,Hyderabad
+U194,High Income Professionals,Fixed,223000,35-44,Pune
+U195,Gig Workers,Variable,24000,31-40,Delhi
+U196,Students,Allowance,18000,18-24,Hyderabad
+U197,High Income Professionals,Fixed,164500,55-64,Pune
+U198,Self-Employed Users,Business,78500,25-34,Surat
+U199,Retired Users,Pension,76500,55-64,Kochi
+U200,Gig Workers,Variable,40000,21-30,Mumbai
+U201,Gig Workers,Variable,22500,21-30,Pune
+U202,Salaried Professionals,Fixed,117000,22-34,Chennai
+U203,Salaried Professionals,Fixed,89000,35-44,Noida
+U204,Self-Employed Users,Business,93000,45-54,Ahmedabad
+U205,Self-Employed Users,Business,89500,45-54,Coimbatore
+U206,Salaried Professionals,Fixed,113500,22-34,Gurugram
+U207,Gig Workers,Variable,35500,21-30,Ahmedabad
+U208,Students,Allowance,10500,18-24,Mysuru
+U209,Gig Workers,Variable,24000,21-30,Chennai
+U210,Retired Users,Pension,79000,65+,Mysuru
+U211,Financially Stressed Users,Variable,36000,35-44,Lucknow
+U212,Self-Employed Users,Business,172500,35-44,Ahmedabad
+U213,High Income Professionals,Fixed,186500,45-54,Gurugram
+U214,Gig Workers,Variable,26000,31-40,Gurugram
+U215,Students,Allowance,20500,18-24,Mysuru
+U216,Salaried Professionals,Fixed,48000,35-44,Noida
+U217,Students,Allowance,16000,18-24,Mysuru
+U218,Self-Employed Users,Business,108000,35-44,Jaipur
+U219,Self-Employed Users,Business,178000,35-44,Jaipur
+U220,Salaried Professionals,Fixed,67500,35-44,Kolkata
+U221,Self-Employed Users,Business,150500,35-44,Coimbatore
+U222,Students,Allowance,19000,18-24,Hyderabad
+U223,Financially Stressed Users,Variable,23500,35-44,Indore
+U224,Students,Allowance,18500,18-24,Hyderabad
+U225,Students,Allowance,8500,18-24,Mysuru
+U226,Retired Users,Pension,51500,65+,Pune
+U227,Salaried Professionals,Fixed,116000,22-34,Mumbai
+U228,High Income Professionals,Fixed,306500,28-34,Delhi
+U229,Gig Workers,Variable,45500,21-30,Bengaluru
+U230,Students,Allowance,19500,18-24,Bengaluru
+U231,Students,Allowance,11000,18-24,Bengaluru
+U232,Gig Workers,Variable,48500,21-30,Bengaluru
+U233,Gig Workers,Variable,22000,31-40,Ahmedabad
+U234,Retired Users,Pension,36000,55-64,Bengaluru
+U235,Self-Employed Users,Business,144500,45-54,Jaipur
+U236,Gig Workers,Variable,27500,31-40,Bengaluru
+U237,High Income Professionals,Fixed,284000,35-44,Hyderabad
+U238,Self-Employed Users,Business,56000,25-34,Surat
+U239,Students,Allowance,13000,18-24,Chennai
+U240,Gig Workers,Variable,44500,31-40,Hyderabad
+U241,Salaried Professionals,Fixed,44000,22-34,Hyderabad
+U242,Self-Employed Users,Business,136000,35-44,Jaipur
+U243,Self-Employed Users,Business,145500,35-44,Surat
+U244,Self-Employed Users,Business,111500,35-44,Delhi
+U245,Salaried Professionals,Fixed,56000,35-44,Bengaluru
+U246,Salaried Professionals,Fixed,57500,35-44,Hyderabad
+U247,Students,Allowance,14000,18-24,Kota
+U248,Salaried Professionals,Fixed,36000,35-44,Chennai
+U249,Self-Employed Users,Business,96500,25-34,Ahmedabad
+U250,Self-Employed Users,Business,85000,25-34,Mumbai

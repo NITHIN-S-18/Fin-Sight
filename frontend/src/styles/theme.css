@@ -1,0 +1,272 @@
+@variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ─────────────────────────────────────────────────────────────────
+   LIGHT MODE (default)
+   Primary: Indigo/Blue family — modern fintech identity
+   Background: Warm neutral — not pure white, not beige
+───────────────────────────────────────────────────────────────── */
+:root {
+  --font-size: 16px;
+
+  /* Base surfaces */
+  --background: #F8FAFC;
+  --foreground: #0F172A;
+  --card: #FFFFFF;
+  --card-foreground: #0F172A;
+  --popover: #FFFFFF;
+  --popover-foreground: #0F172A;
+
+  /* Primary — indigo-600 */
+  --primary: #4F46E5;
+  --primary-foreground: #FFFFFF;
+
+  /* Secondary */
+  --secondary: #EEF2FF;
+  --secondary-foreground: #3730A3;
+
+  /* Muted */
+  --muted: #F1F5F9;
+  --muted-foreground: #475569;
+
+  /* Accent */
+  --accent: #EEF2FF;
+  --accent-foreground: #0F172A;
+
+  /* Destructive */
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+
+  /* Semantic tokens */
+  --success: #059669;
+  --success-foreground: #FFFFFF;
+  --warning: #D97706;
+  --warning-foreground: #FFFFFF;
+  --danger: #DC2626;
+  --danger-foreground: #FFFFFF;
+  --info: #2563EB;
+  --info-foreground: #FFFFFF;
+  --ai: #7C3AED;
+  --ai-foreground: #FFFFFF;
+
+  /* Borders & inputs — clearly visible in light mode */
+  --border: #E2E8F0;
+  --input: #FFFFFF;
+  --input-background: #F8FAFC;
+  --switch-background: #CBD5E1;
+
+  /* Typography */
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+
+  /* Focus ring */
+  --ring: #4F46E5;
+
+  /* Charts — distinct, accessible palette */
+  --chart-1: #4F46E5;
+  --chart-2: #10B981;
+  --chart-3: #F59E0B;
+  --chart-4: #EF4444;
+  --chart-5: #8B5CF6;
+
+  /* Radius */
+  --radius: 0.625rem;
+
+  /* Sidebar */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #0F172A;
+  --sidebar-primary: #4F46E5;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F1F5F9;
+  --sidebar-accent-foreground: #0F172A;
+  --sidebar-border: #E2E8F0;
+  --sidebar-ring: #4F46E5;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   DARK MODE
+   Background: Deep slate — not pure black
+   Surfaces: Clearly separated layers
+───────────────────────────────────────────────────────────────── */
+.dark {
+  /* Base surfaces */
+  --background: #0B1120;
+  --foreground: #F8FAFC;
+  --card: #0D1322;
+  --card-foreground: #F8FAFC;
+  --popover: #0D1322;
+  --popover-foreground: #F8FAFC;
+
+  /* Primary — indigo-400 (lighter for dark backgrounds) */
+  --primary: #818CF8;
+  --primary-foreground: #1E1B4B;
+
+  /* Secondary */
+  --secondary: #1E293B;
+  --secondary-foreground: #CBD5E1;
+
+  /* Muted */
+  --muted: #1E293B;
+  --muted-foreground: #94A3B8;
+
+  /* Accent */
+  --accent: #334155;
+  --accent-foreground: #F8FAFC;
+
+  /* Destructive */
+  --destructive: #F87171;
+  --destructive-foreground: #FEF2F2;
+
+  /* Semantic tokens — adjusted for dark backgrounds */
+  --success: #34D399;
+  --success-foreground: #022C22;
+  --warning: #FBBF24;
+  --warning-foreground: #451A03;
+  --danger: #F87171;
+  --danger-foreground: #FEF2F2;
+  --info: #60A5FA;
+  --info-foreground: #1E3A8A;
+  --ai: #A78BFA;
+  --ai-foreground: #2E1065;
+
+  /* Borders & inputs */
+  --border: rgba(255, 255, 255, 0.08);
+  --input: #0D1322;
+  --input-background: #070B14;
+  --switch-background: #334155;
+
+  /* Typography */
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+
+  /* Focus ring */
+  --ring: #818CF8;
+
+  /* Charts — brighter for dark backgrounds */
+  --chart-1: #818CF8;
+  --chart-2: #34D399;
+  --chart-3: #FBBF24;
+  --chart-4: #F87171;
+  --chart-5: #A78BFA;
+
+  /* Sidebar */
+  --sidebar: #090E1C;
+  --sidebar-foreground: #F8FAFC;
+  --sidebar-primary: #818CF8;
+  --sidebar-primary-foreground: #1E1B4B;
+  --sidebar-accent: #1E293B;
+  --sidebar-accent-foreground: #CBD5E1;
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+  --sidebar-ring: #818CF8;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   TAILWIND TOKEN MAPPING
+───────────────────────────────────────────────────────────────── */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-danger: var(--danger);
+  --color-danger-foreground: var(--danger-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-ai: var(--ai);
+  --color-ai-foreground: var(--ai-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    transition: background-color 250ms ease, color 150ms ease;
+  }
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.4;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.4;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}

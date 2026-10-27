@@ -1,0 +1,89 @@
+# ==========================
+# Python Bytecode & Cache
+# ==========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# ==========================
+# Virtual Environments
+# ==========================
+.venv/
+venv/
+env/
+
+# ==========================
+# Environment Variables & Secrets
+# ==========================
+.env
+.env.*
+!.env.example
+
+# ==========================
+# Node.js Dependencies & Builds
+# ==========================
+node_modules/
+dist/
+frontend/dist/
+.vercel/
+
+# ==========================
+# Databases & Local Dumps
+# ==========================
+*.db
+*.sqlite
+*.sqlite3
+*.dump
+finsight.db
+
+# ==========================
+# User Uploads (Preserve structure via .gitkeep)
+# ==========================
+backend/uploads/*
+!backend/uploads/.gitkeep
+uploads/
+
+# ==========================
+# Offline Training Datasets (>100MB)
+# ==========================
+backend/app/data/ml_dataset_v3/
+
+# ==========================
+# Large ML Model Binaries (>50MB)
+# ==========================
+backend/app/ml/saved_models/
+
+# ==========================
+# IDE & OS Files
+# ==========================
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# ==========================
+# Jupyter & Temporary Files
+# ==========================
+.ipynb_checkpoints/
+*.log
+*.tmp
+*.bak
+build/
+*.egg-info/
+
+# ==========================
+# Agent & Inspection Artifacts
+# ==========================
+.agents/
+.aider-desk/
+.impeccable/
+archify/
+audit-output/
+documentation/
+skills-lock.json
+finsight_test_artifacts/

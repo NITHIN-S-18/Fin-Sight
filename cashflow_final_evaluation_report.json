@@ -1,0 +1,654 @@
+{
+  "dataset": {
+    "name": "finsight_ml_dataset_v3",
+    "users": 5000,
+    "transactions": 1171143,
+    "date_range": [
+      "2023-01-01",
+      "2024-12-28"
+    ],
+    "usable_users": 5000,
+    "usable_snapshots": 90000,
+    "quality": {
+      "exact_duplicate_rows": 0,
+      "duplicate_user_date_amount": 9,
+      "invalid_dates": 0,
+      "negative_transactions": 10827,
+      "status_counts": {
+        "Success": 963331,
+        "Rejected": 65195,
+        "Declined": 65022,
+        "Failed": 64700,
+        "Pending": 12895
+      },
+      "class_counts": {
+        "Expense": 720611,
+        "Subscription": 183208,
+        "Income": 120000,
+        "EMI": 111078,
+        "BNPL": 36246
+      },
+      "missing_values": {
+        "transaction_id": 0,
+        "user_id": 0,
+        "transaction_date": 0,
+        "merchant_name": 0,
+        "description": 0,
+        "amount": 0,
+        "category": 0,
+        "transaction_class": 0,
+        "payment_mode": 0,
+        "frequency": 0,
+        "income_flag": 0,
+        "recurring_flag": 0,
+        "autopay_flag": 0,
+        "risk_label": 0,
+        "transaction_status": 0,
+        "is_new_subscription": 0,
+        "merchant_type": 0,
+        "commitment_type": 840611
+      }
+    },
+    "income_flag_rule": "Yes is income; No is non-income; only successful positive amounts contribute."
+  },
+  "temporal_experiment": {
+    "split": {
+      "train": {
+        "count": 60000,
+        "range": [
+          "2023-06",
+          "2024-05",
+          "2023-07",
+          "2024-06"
+        ]
+      },
+      "validation": {
+        "count": 15000,
+        "range": [
+          "2024-06",
+          "2024-08",
+          "2024-07",
+          "2024-09"
+        ]
+      },
+      "test": {
+        "count": 15000,
+        "range": [
+          "2024-09",
+          "2024-11",
+          "2024-10",
+          "2024-12"
+        ]
+      }
+    },
+    "comparison": {
+      "income": {
+        "strongest_baseline": {
+          "name": "six_month_average",
+          "mae": 6702.5878,
+          "rmse": 10761.8231,
+          "r2": 0.945,
+          "median_absolute_error": 4132.3342,
+          "p90_absolute_error": 14793.7817
+        },
+        "baselines": {
+          "previous_month": {
+            "mae": 8790.4468,
+            "rmse": 14059.9357,
+            "r2": 0.9061,
+            "median_absolute_error": 5392.85,
+            "p90_absolute_error": 19912.74
+          },
+          "three_month_average": {
+            "mae": 7184.9152,
+            "rmse": 11475.8893,
+            "r2": 0.9374,
+            "median_absolute_error": 4368.085,
+            "p90_absolute_error": 16092.9633
+          },
+          "six_month_average": {
+            "mae": 6702.5878,
+            "rmse": 10761.8231,
+            "r2": 0.945,
+            "median_absolute_error": 4132.3342,
+            "p90_absolute_error": 14793.7817
+          }
+        },
+        "HistGradientBoosting": {
+          "mae": 6633.6497,
+          "rmse": 10613.3356,
+          "r2": 0.9465,
+          "median_absolute_error": 4149.6033,
+          "p90_absolute_error": 14500.0166
+        },
+        "XGBoost": {
+          "mae": 6618.4518,
+          "rmse": 10597.2836,
+          "r2": 0.9467,
+          "median_absolute_error": 4133.3942,
+          "p90_absolute_error": 14480.6028
+        },
+        "selected": "six_month_average"
+      },
+      "committed": {
+        "strongest_baseline": {
+          "name": "three_month_average",
+          "mae": 2789.4674,
+          "rmse": 4352.2128,
+          "r2": 0.6095,
+          "median_absolute_error": 1405.0317,
+          "p90_absolute_error": 7750.0833
+        },
+        "baselines": {
+          "previous_month": {
+            "mae": 2948.4401,
+            "rmse": 5132.3333,
+            "r2": 0.457,
+            "median_absolute_error": 765.095,
+            "p90_absolute_error": 10208.27
+          },
+          "three_month_average": {
+            "mae": 2789.4674,
+            "rmse": 4352.2128,
+            "r2": 0.6095,
+            "median_absolute_error": 1405.0317,
+            "p90_absolute_error": 7750.0833
+          },
+          "six_month_average": {
+            "mae": 2837.104,
+            "rmse": 4241.7002,
+            "r2": 0.6291,
+            "median_absolute_error": 1690.8908,
+            "p90_absolute_error": 7357.69
+          }
+        },
+        "HistGradientBoosting": {
+          "mae": 2770.9347,
+          "rmse": 4076.2028,
+          "r2": 0.6575,
+          "median_absolute_error": 1741.4401,
+          "p90_absolute_error": 7167.1764
+        },
+        "XGBoost": {
+          "mae": 2763.0838,
+          "rmse": 4075.3899,
+          "r2": 0.6576,
+          "median_absolute_error": 1726.0512,
+          "p90_absolute_error": 7181.083
+        },
+        "selected": "three_month_average"
+      },
+      "variable": {
+        "strongest_baseline": {
+          "name": "six_month_average",
+          "mae": 2353.6849,
+          "rmse": 3423.3091,
+          "r2": 0.6293,
+          "median_absolute_error": 1601.8925,
+          "p90_absolute_error": 5289.8383
+        },
+        "baselines": {
+          "previous_month": {
+            "mae": 3073.8146,
+            "rmse": 4523.1417,
+            "r2": 0.3528,
+            "median_absolute_error": 2037.015,
+            "p90_absolute_error": 6885.96
+          },
+          "three_month_average": {
+            "mae": 2516.1565,
+            "rmse": 3665.27,
+            "r2": 0.575,
+            "median_absolute_error": 1712.0283,
+            "p90_absolute_error": 5674.99
+          },
+          "six_month_average": {
+            "mae": 2353.6849,
+            "rmse": 3423.3091,
+            "r2": 0.6293,
+            "median_absolute_error": 1601.8925,
+            "p90_absolute_error": 5289.8383
+          }
+        },
+        "HistGradientBoosting": {
+          "mae": 2207.4972,
+          "rmse": 3193.4104,
+          "r2": 0.6774,
+          "median_absolute_error": 1512.1131,
+          "p90_absolute_error": 4942.6981
+        },
+        "XGBoost": {
+          "mae": 2206.6712,
+          "rmse": 3197.3264,
+          "r2": 0.6766,
+          "median_absolute_error": 1505.699,
+          "p90_absolute_error": 4959.3836
+        },
+        "selected": "HistGradientBoosting"
+      }
+    },
+    "selected_forecasters": {
+      "income": "six_month_average",
+      "committed": "three_month_average",
+      "variable": "HistGradientBoosting"
+    }
+  },
+  "unseen_user_experiment": {
+    "split": {
+      "development": {
+        "user_count": 3500,
+        "user_id_range": [
+          "V300001",
+          "V303500"
+        ],
+        "snapshot_count": 63000,
+        "target_month_range": [
+          "2023-07",
+          "2024-12"
+        ]
+      },
+      "validation": {
+        "user_count": 750,
+        "user_id_range": [
+          "V303501",
+          "V304250"
+        ],
+        "snapshot_count": 13500,
+        "target_month_range": [
+          "2023-07",
+          "2024-12"
+        ]
+      },
+      "unseen_test": {
+        "user_count": 750,
+        "user_id_range": [
+          "V304251",
+          "V305000"
+        ],
+        "snapshot_count": 13500,
+        "target_month_range": [
+          "2023-07",
+          "2024-12"
+        ]
+      }
+    },
+    "validation": {
+      "income": {
+        "strongest_baseline": {
+          "name": "six_month_average",
+          "mae": 6335.1841,
+          "rmse": 10139.2412,
+          "r2": 0.9451,
+          "median_absolute_error": 4051.99,
+          "p90_absolute_error": 13810.2283,
+          "mean_actual": 72250.9526,
+          "mean_predicted": 71948.3468,
+          "prediction_bias": -302.6059
+        },
+        "HistGradientBoosting": {
+          "mae": 6284.0375,
+          "rmse": 10015.0862,
+          "r2": 0.9465,
+          "median_absolute_error": 4060.0543,
+          "p90_absolute_error": 13563.8829,
+          "mean_actual": 72250.9526,
+          "mean_predicted": 72244.9538,
+          "prediction_bias": -5.9988,
+          "improvement_percent": 0.8073
+        },
+        "selected": "six_month_average"
+      },
+      "committed": {
+        "strongest_baseline": {
+          "name": "three_month_average",
+          "mae": 2736.8461,
+          "rmse": 4311.8348,
+          "r2": 0.6115,
+          "median_absolute_error": 1353.38,
+          "p90_absolute_error": 7612.2067,
+          "mean_actual": 7123.1255,
+          "mean_predicted": 7007.4421,
+          "prediction_bias": -115.6834
+        },
+        "HistGradientBoosting": {
+          "mae": 2734.9303,
+          "rmse": 4065.7063,
+          "r2": 0.6546,
+          "median_absolute_error": 1681.9812,
+          "p90_absolute_error": 7171.913,
+          "mean_actual": 7123.1255,
+          "mean_predicted": 7017.8125,
+          "prediction_bias": -105.313,
+          "improvement_percent": 0.07
+        },
+        "selected": "three_month_average"
+      },
+      "variable": {
+        "strongest_baseline": {
+          "name": "six_month_average",
+          "mae": 2297.3644,
+          "rmse": 3334.7797,
+          "r2": 0.6229,
+          "median_absolute_error": 1581.2867,
+          "p90_absolute_error": 5133.4,
+          "mean_actual": 7024.3587,
+          "mean_predicted": 7028.0041,
+          "prediction_bias": 3.6453
+        },
+        "HistGradientBoosting": {
+          "mae": 2165.6736,
+          "rmse": 3130.4836,
+          "r2": 0.6677,
+          "median_absolute_error": 1500.6708,
+          "p90_absolute_error": 4728.0826,
+          "mean_actual": 7024.3587,
+          "mean_predicted": 7048.2012,
+          "prediction_bias": 23.8424,
+          "improvement_percent": 5.7323
+        },
+        "selected": "HistGradientBoosting"
+      }
+    },
+    "unseen_test": {
+      "income": {
+        "selected": "six_month_average",
+        "model": {
+          "mae": 6484.5329,
+          "rmse": 10407.0147,
+          "r2": 0.9525,
+          "median_absolute_error": 4078.6308,
+          "p90_absolute_error": 14258.0267,
+          "mean_actual": 75964.9298,
+          "mean_predicted": 75657.9294,
+          "prediction_bias": -307.0003
+        },
+        "strongest_baseline": {
+          "name": "six_month_average",
+          "mae": 6484.5329,
+          "rmse": 10407.0147,
+          "r2": 0.9525,
+          "median_absolute_error": 4078.6308,
+          "p90_absolute_error": 14258.0267,
+          "mean_actual": 75964.9298,
+          "mean_predicted": 75657.9294,
+          "prediction_bias": -307.0003
+        },
+        "improvement_over_baseline_percent": 0.0
+      },
+      "committed": {
+        "selected": "three_month_average",
+        "model": {
+          "mae": 2710.8573,
+          "rmse": 4206.0188,
+          "r2": 0.6119,
+          "median_absolute_error": 1394.5367,
+          "p90_absolute_error": 7445.64,
+          "mean_actual": 6990.9625,
+          "mean_predicted": 6914.4047,
+          "prediction_bias": -76.5578
+        },
+        "strongest_baseline": {
+          "name": "three_month_average",
+          "mae": 2710.8573,
+          "rmse": 4206.0188,
+          "r2": 0.6119,
+          "median_absolute_error": 1394.5367,
+          "p90_absolute_error": 7445.64,
+          "mean_actual": 6990.9625,
+          "mean_predicted": 6914.4047,
+          "prediction_bias": -76.5578
+        },
+        "improvement_over_baseline_percent": 0.0
+      },
+      "variable": {
+        "selected": "HistGradientBoosting",
+        "model": {
+          "mae": 2276.4654,
+          "rmse": 3292.4903,
+          "r2": 0.6995,
+          "median_absolute_error": 1574.2274,
+          "p90_absolute_error": 5055.1073,
+          "mean_actual": 7522.2196,
+          "mean_predicted": 7443.3038,
+          "prediction_bias": -78.9158
+        },
+        "strongest_baseline": {
+          "name": "six_month_average",
+          "mae": 2425.3789,
+          "rmse": 3506.5838,
+          "r2": 0.6591,
+          "median_absolute_error": 1660.4458,
+          "p90_absolute_error": 5402.5617,
+          "mean_actual": 7522.2196,
+          "mean_predicted": 7521.0848,
+          "prediction_bias": -1.1348
+        },
+        "improvement_over_baseline_percent": 6.1398
+      }
+    },
+    "user_overlap": {
+      "development": {
+        "validation": false,
+        "unseen_test": false
+      },
+      "validation": {
+        "development": false,
+        "unseen_test": false
+      },
+      "unseen_test": {
+        "development": false,
+        "validation": false
+      }
+    }
+  },
+  "generalization": {
+    "income": {
+      "known_user_test_mae": 6746.6362,
+      "unseen_user_mae": 6484.5329,
+      "degradation_percent": -3.8849,
+      "baseline_mae": 6484.5329,
+      "model_improvement_percent": 0.0,
+      "classification": "NO MEANINGFUL GENERALIZATION"
+    },
+    "committed": {
+      "known_user_test_mae": 2917.6251,
+      "unseen_user_mae": 2710.8573,
+      "degradation_percent": -7.0869,
+      "baseline_mae": 2710.8573,
+      "model_improvement_percent": 0.0,
+      "classification": "NO MEANINGFUL GENERALIZATION"
+    },
+    "variable": {
+      "known_user_test_mae": 2220.1434,
+      "unseen_user_mae": 2276.4654,
+      "degradation_percent": 2.5369,
+      "baseline_mae": 2425.3789,
+      "model_improvement_percent": 6.1398,
+      "classification": "STRONG GENERALIZATION"
+    }
+  },
+  "case_studies": [
+    {
+      "pattern": "stable income",
+      "user_id": "V304342",
+      "feature_month": "2024-11",
+      "target_month": "2024-12",
+      "historical": {
+        "income_previous": 167260.87,
+        "income_6m_average": 163080.895,
+        "committed_6m_average": 4852.251666666667,
+        "variable_6m_average": 16319.470000000001
+      },
+      "predicted": {
+        "income": 163080.895,
+        "committed": 4932.9633,
+        "variable": 16937.3144
+      },
+      "actual": {
+        "income": 163996.68,
+        "committed": 4475.76,
+        "variable": 4296.97
+      },
+      "absolute_error": {
+        "income": 915.7850000000035,
+        "committed": 457.2033000000001,
+        "variable": 12640.344399999998
+      }
+    },
+    {
+      "pattern": "variable income",
+      "user_id": "V304737",
+      "feature_month": "2024-11",
+      "target_month": "2024-12",
+      "historical": {
+        "income_previous": 128185.9,
+        "income_6m_average": 102189.39166666666,
+        "committed_6m_average": 5534.611666666668,
+        "variable_6m_average": 8203.208333333334
+      },
+      "predicted": {
+        "income": 102189.3917,
+        "committed": 0.0,
+        "variable": 8922.451
+      },
+      "actual": {
+        "income": 155535.27,
+        "committed": 0.0,
+        "variable": 18802.86
+      },
+      "absolute_error": {
+        "income": 53345.8783,
+        "committed": 0.0,
+        "variable": 9880.409000000001
+      }
+    },
+    {
+      "pattern": "high commitments",
+      "user_id": "V304790",
+      "feature_month": "2024-11",
+      "target_month": "2024-12",
+      "historical": {
+        "income_previous": 73440.84,
+        "income_6m_average": 78979.00166666666,
+        "committed_6m_average": 29520.281666666666,
+        "variable_6m_average": 8218.423333333334
+      },
+      "predicted": {
+        "income": 78979.0017,
+        "committed": 28158.5733,
+        "variable": 7987.7054
+      },
+      "actual": {
+        "income": 77217.49,
+        "committed": 34576.86,
+        "variable": 9439.61
+      },
+      "absolute_error": {
+        "income": 1761.5116999999882,
+        "committed": 6418.286700000001,
+        "variable": 1451.9046000000008
+      }
+    },
+    {
+      "pattern": "low commitments",
+      "user_id": "V304608",
+      "feature_month": "2024-11",
+      "target_month": "2024-12",
+      "historical": {
+        "income_previous": 73873.11,
+        "income_6m_average": 70730.08,
+        "committed_6m_average": 0.0,
+        "variable_6m_average": 6401.3516666666665
+      },
+      "predicted": {
+        "income": 70730.08,
+        "committed": 0.0,
+        "variable": 7198.6141
+      },
+      "actual": {
+        "income": 62277.21,
+        "committed": 0.0,
+        "variable": 6341.45
+      },
+      "absolute_error": {
+        "income": 8452.870000000003,
+        "committed": 0.0,
+        "variable": 857.1641
+      }
+    },
+    {
+      "pattern": "high discretionary spending",
+      "user_id": "V304569",
+      "feature_month": "2024-11",
+      "target_month": "2024-12",
+      "historical": {
+        "income_previous": 242042.91,
+        "income_6m_average": 206071.50166666662,
+        "committed_6m_average": 9548.586666666666,
+        "variable_6m_average": 27129.510000000006
+      },
+      "predicted": {
+        "income": 206071.5017,
+        "committed": 9513.77,
+        "variable": 21150.0852
+      },
+      "actual": {
+        "income": 231594.58,
+        "committed": 9545.12,
+        "variable": 28163.75
+      },
+      "absolute_error": {
+        "income": 25523.078299999994,
+        "committed": 31.350000000000364,
+        "variable": 7013.664799999999
+      }
+    },
+    {
+      "pattern": "poor prediction (largest combined absolute error)",
+      "user_id": "V304564",
+      "feature_month": "2024-04",
+      "target_month": "2024-05",
+      "historical": {
+        "income_previous": 113167.46,
+        "income_6m_average": 112646.26833333331,
+        "committed_6m_average": 4209.44,
+        "variable_6m_average": 11206.055000000002
+      },
+      "predicted": {
+        "income": 112646.2683,
+        "committed": 3221.63,
+        "variable": 9646.9136
+      },
+      "actual": {
+        "income": 216827.66,
+        "committed": 7714.0,
+        "variable": 3654.7400000000002
+      },
+      "absolute_error": {
+        "income": 104181.39170000001,
+        "committed": 4492.37,
+        "variable": 5992.1736
+      }
+    }
+  ],
+  "sanity_checks": {
+    "minimum_predictions": {
+      "income": 14596.230000000001,
+      "committed": 0.0,
+      "variable": 1527.3152856480028
+    },
+    "negative_expense_predictions": {
+      "committed": 0,
+      "variable": 0
+    },
+    "derived_consistency": {
+      "total_expenses": true,
+      "net_cash": true
+    }
+  },
+  "production_artifact": "cash_flow_forecast/v1.0 unchanged",
+  "derived_outputs": {
+    "total_expenses": "committed + variable",
+    "net_cash": "income - total expenses"
+  }
+}

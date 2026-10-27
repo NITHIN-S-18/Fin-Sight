@@ -1,0 +1,247 @@
+{
+  "dataset": "finsight_ml_dataset_v3",
+  "snapshots": 90000,
+  "split": {
+    "train": {
+      "count": 60000,
+      "feature_month_range": [
+        "2023-06",
+        "2024-05"
+      ],
+      "target_month_range": [
+        "2023-07",
+        "2024-06"
+      ]
+    },
+    "validation": {
+      "count": 15000,
+      "feature_month_range": [
+        "2024-06",
+        "2024-08"
+      ],
+      "target_month_range": [
+        "2024-07",
+        "2024-09"
+      ]
+    },
+    "test": {
+      "count": 15000,
+      "feature_month_range": [
+        "2024-09",
+        "2024-11"
+      ],
+      "target_month_range": [
+        "2024-10",
+        "2024-12"
+      ]
+    }
+  },
+  "xgboost_version": "3.4.1",
+  "targets": {
+    "income": {
+      "strongest_baseline": {
+        "name": "six_month_average",
+        "mae": 6702.5878,
+        "rmse": 10761.8231,
+        "r2": 0.945,
+        "median_absolute_error": 4132.3342,
+        "p90_absolute_error": 14793.7817
+      },
+      "baselines": {
+        "previous_month": {
+          "mae": 8790.4468,
+          "rmse": 14059.9357,
+          "r2": 0.9061,
+          "median_absolute_error": 5392.85,
+          "p90_absolute_error": 19912.74
+        },
+        "three_month_average": {
+          "mae": 7184.9152,
+          "rmse": 11475.8893,
+          "r2": 0.9374,
+          "median_absolute_error": 4368.085,
+          "p90_absolute_error": 16092.9633
+        },
+        "six_month_average": {
+          "mae": 6702.5878,
+          "rmse": 10761.8231,
+          "r2": 0.945,
+          "median_absolute_error": 4132.3342,
+          "p90_absolute_error": 14793.7817
+        }
+      },
+      "HistGradientBoosting": {
+        "mae": 6633.6497,
+        "rmse": 10613.3356,
+        "r2": 0.9465,
+        "median_absolute_error": 4149.6033,
+        "p90_absolute_error": 14500.0166
+      },
+      "XGBoost": {
+        "mae": 6618.4518,
+        "rmse": 10597.2836,
+        "r2": 0.9467,
+        "median_absolute_error": 4133.3942,
+        "p90_absolute_error": 14480.6028
+      },
+      "selected": "six_month_average"
+    },
+    "committed": {
+      "strongest_baseline": {
+        "name": "three_month_average",
+        "mae": 2789.4674,
+        "rmse": 4352.2128,
+        "r2": 0.6095,
+        "median_absolute_error": 1405.0317,
+        "p90_absolute_error": 7750.0833
+      },
+      "baselines": {
+        "previous_month": {
+          "mae": 2948.4401,
+          "rmse": 5132.3333,
+          "r2": 0.457,
+          "median_absolute_error": 765.095,
+          "p90_absolute_error": 10208.27
+        },
+        "three_month_average": {
+          "mae": 2789.4674,
+          "rmse": 4352.2128,
+          "r2": 0.6095,
+          "median_absolute_error": 1405.0317,
+          "p90_absolute_error": 7750.0833
+        },
+        "six_month_average": {
+          "mae": 2837.104,
+          "rmse": 4241.7002,
+          "r2": 0.6291,
+          "median_absolute_error": 1690.8908,
+          "p90_absolute_error": 7357.69
+        }
+      },
+      "HistGradientBoosting": {
+        "mae": 2770.9347,
+        "rmse": 4076.2028,
+        "r2": 0.6575,
+        "median_absolute_error": 1741.4401,
+        "p90_absolute_error": 7167.1764
+      },
+      "XGBoost": {
+        "mae": 2763.0838,
+        "rmse": 4075.3899,
+        "r2": 0.6576,
+        "median_absolute_error": 1726.0512,
+        "p90_absolute_error": 7181.083
+      },
+      "selected": "three_month_average"
+    },
+    "variable": {
+      "strongest_baseline": {
+        "name": "six_month_average",
+        "mae": 2353.6849,
+        "rmse": 3423.3091,
+        "r2": 0.6293,
+        "median_absolute_error": 1601.8925,
+        "p90_absolute_error": 5289.8383
+      },
+      "baselines": {
+        "previous_month": {
+          "mae": 3073.8146,
+          "rmse": 4523.1417,
+          "r2": 0.3528,
+          "median_absolute_error": 2037.015,
+          "p90_absolute_error": 6885.96
+        },
+        "three_month_average": {
+          "mae": 2516.1565,
+          "rmse": 3665.27,
+          "r2": 0.575,
+          "median_absolute_error": 1712.0283,
+          "p90_absolute_error": 5674.99
+        },
+        "six_month_average": {
+          "mae": 2353.6849,
+          "rmse": 3423.3091,
+          "r2": 0.6293,
+          "median_absolute_error": 1601.8925,
+          "p90_absolute_error": 5289.8383
+        }
+      },
+      "HistGradientBoosting": {
+        "mae": 2207.4972,
+        "rmse": 3193.4104,
+        "r2": 0.6774,
+        "median_absolute_error": 1512.1131,
+        "p90_absolute_error": 4942.6981
+      },
+      "XGBoost": {
+        "mae": 2206.6712,
+        "rmse": 3197.3264,
+        "r2": 0.6766,
+        "median_absolute_error": 1505.699,
+        "p90_absolute_error": 4959.3836
+      },
+      "selected": "HistGradientBoosting"
+    }
+  },
+  "selected_forecasters": {
+    "income": "six_month_average",
+    "committed": "three_month_average",
+    "variable": "HistGradientBoosting"
+  },
+  "test": {
+    "income": {
+      "selected": "six_month_average",
+      "metrics": {
+        "mae": 6746.6362,
+        "rmse": 10532.0966,
+        "r2": 0.9474,
+        "median_absolute_error": 4284.365,
+        "p90_absolute_error": 14975.4117
+      },
+      "strongest_baseline": {
+        "name": "six_month_average",
+        "mae": 6746.6362,
+        "rmse": 10532.0966,
+        "r2": 0.9474,
+        "median_absolute_error": 4284.365,
+        "p90_absolute_error": 14975.4117
+      }
+    },
+    "committed": {
+      "selected": "three_month_average",
+      "metrics": {
+        "mae": 2917.6251,
+        "rmse": 4527.3962,
+        "r2": 0.5811,
+        "median_absolute_error": 1522.3817,
+        "p90_absolute_error": 8004.7533
+      },
+      "strongest_baseline": {
+        "name": "three_month_average",
+        "mae": 2917.6251,
+        "rmse": 4527.3962,
+        "r2": 0.5811,
+        "median_absolute_error": 1522.3817,
+        "p90_absolute_error": 8004.7533
+      }
+    },
+    "variable": {
+      "selected": "HistGradientBoosting",
+      "metrics": {
+        "mae": 2220.1434,
+        "rmse": 3227.0059,
+        "r2": 0.6797,
+        "median_absolute_error": 1529.7635,
+        "p90_absolute_error": 4862.5246
+      },
+      "strongest_baseline": {
+        "name": "six_month_average",
+        "mae": 2329.6483,
+        "rmse": 3400.3607,
+        "r2": 0.6444,
+        "median_absolute_error": 1574.0775,
+        "p90_absolute_error": 5227.665
+      }
+    }
+  }
+}

@@ -1,0 +1,386 @@
+{
+  "model": "financial_shortfall",
+  "model_version": "v1.0",
+  "dataset": {
+    "source": "V:\\MAJOR PROJECT\\finsight-main\\finsight-main\\backend\\app\\data\\finsight_dataset_v2.csv",
+    "users": 241,
+    "transactions": 11365,
+    "monthly_snapshots": 3444,
+    "date_range": {
+      "first_feature_month": "2024-05",
+      "last_outcome_month": "2025-12"
+    }
+  },
+  "target": {
+    "definition": "shortfall=1 iff actual next-calendar-month successful positive income minus committed expenses minus variable expenses is negative.",
+    "future_period": "feature_month + 1 calendar month",
+    "shortfall_count": 2067,
+    "non_shortfall_count": 1377,
+    "shortfall_percentage": 60.0174,
+    "source_of_truth": "Observed future transaction rows using financial_rules status classification."
+  },
+  "leakage_audit": {
+    "previous_income": true,
+    "income_3m": true,
+    "income_6m": true,
+    "income_trend": true,
+    "income_volatility": true,
+    "income_stability": true,
+    "previous_committed": true,
+    "committed_3m": true,
+    "committed_6m": true,
+    "commitment_ratio": true,
+    "commitment_count": true,
+    "commitment_growth": true,
+    "subscription_burden": true,
+    "emi_burden": true,
+    "bnpl_burden": true,
+    "recurring_payment_burden": true,
+    "commitment_diversity": true,
+    "previous_variable": true,
+    "variable_3m": true,
+    "variable_6m": true,
+    "variable_trend": true,
+    "variable_volatility": true,
+    "discretionary_spending": true,
+    "category_growth": true,
+    "category_volatility": true,
+    "previous_net_cash": true,
+    "net_cash_3m": true,
+    "net_cash_6m": true,
+    "minimum_net_cash": true,
+    "net_cash_volatility": true,
+    "positive_cash_frequency": true,
+    "negative_cash_frequency": true,
+    "payment_success_rate": true,
+    "failed_transaction_rate": true,
+    "pending_transaction_rate": true,
+    "payment_reliability": true,
+    "total_monthly_commitments": true,
+    "active_recurring_count": true,
+    "commitment_burden": true,
+    "commitment_change": true,
+    "expected_income": true,
+    "expected_committed_expenses": true,
+    "expected_variable_expenses": true,
+    "expected_total_expenses": true,
+    "expected_net_cash": true,
+    "future_outcome_in_features": false
+  },
+  "temporal_split": {
+    "train": {
+      "feature_months": [
+        "2024-05",
+        "2025-05"
+      ],
+      "samples": 2463,
+      "users": 238,
+      "distribution": {
+        "1": 1569,
+        "0": 894
+      }
+    },
+    "validation": {
+      "feature_months": [
+        "2025-06",
+        "2025-08"
+      ],
+      "samples": 559,
+      "users": 197,
+      "distribution": {
+        "1": 298,
+        "0": 261
+      }
+    },
+    "test": {
+      "feature_months": [
+        "2025-09",
+        "2025-11"
+      ],
+      "samples": 422,
+      "users": 161,
+      "distribution": {
+        "0": 222,
+        "1": 200
+      }
+    },
+    "chronological": true
+  },
+  "baseline": {
+    "formula": "shortfall if six-month mean net cash minus six-month net-cash volatility is negative OR commitment ratio plus variable-volatility/income exceeds 0.85.",
+    "validation": {
+      "accuracy": 0.7961,
+      "balanced_accuracy": 0.7861,
+      "precision": 0.746,
+      "recall": 0.9362,
+      "f1": 0.8304,
+      "shortfall_recall": 0.9362,
+      "roc_auc": null,
+      "pr_auc": null,
+      "confusion_matrix": {
+        "non_shortfall": {
+          "non_shortfall": 166,
+          "shortfall": 95
+        },
+        "shortfall": {
+          "non_shortfall": 19,
+          "shortfall": 279
+        }
+      }
+    },
+    "test": {
+      "accuracy": 0.782,
+      "balanced_accuracy": 0.7873,
+      "precision": 0.7177,
+      "recall": 0.89,
+      "f1": 0.7946,
+      "shortfall_recall": 0.89,
+      "roc_auc": null,
+      "pr_auc": null,
+      "confusion_matrix": {
+        "non_shortfall": {
+          "non_shortfall": 152,
+          "shortfall": 70
+        },
+        "shortfall": {
+          "non_shortfall": 22,
+          "shortfall": 178
+        }
+      }
+    },
+    "unseen": {
+      "accuracy": 0.95,
+      "balanced_accuracy": 0.5,
+      "precision": 0.95,
+      "recall": 1.0,
+      "f1": 0.9744,
+      "shortfall_recall": 1.0,
+      "roc_auc": null,
+      "pr_auc": null,
+      "confusion_matrix": {
+        "non_shortfall": {
+          "non_shortfall": 0,
+          "shortfall": 21
+        },
+        "shortfall": {
+          "non_shortfall": 0,
+          "shortfall": 399
+        }
+      }
+    }
+  },
+  "ml": {
+    "algorithm": "HistGradientBoostingClassifier",
+    "features": [
+      "previous_income",
+      "income_3m",
+      "income_6m",
+      "income_trend",
+      "income_volatility",
+      "income_stability",
+      "previous_committed",
+      "committed_3m",
+      "committed_6m",
+      "commitment_ratio",
+      "commitment_count",
+      "commitment_growth",
+      "subscription_burden",
+      "emi_burden",
+      "bnpl_burden",
+      "recurring_payment_burden",
+      "commitment_diversity",
+      "previous_variable",
+      "variable_3m",
+      "variable_6m",
+      "variable_trend",
+      "variable_volatility",
+      "discretionary_spending",
+      "category_growth",
+      "category_volatility",
+      "previous_net_cash",
+      "net_cash_3m",
+      "net_cash_6m",
+      "minimum_net_cash",
+      "net_cash_volatility",
+      "positive_cash_frequency",
+      "negative_cash_frequency",
+      "payment_success_rate",
+      "failed_transaction_rate",
+      "pending_transaction_rate",
+      "payment_reliability",
+      "total_monthly_commitments",
+      "active_recurring_count",
+      "commitment_burden",
+      "commitment_change",
+      "expected_income",
+      "expected_committed_expenses",
+      "expected_variable_expenses",
+      "expected_total_expenses",
+      "expected_net_cash"
+    ],
+    "preprocessing": "median imputation and standard scaling, fitted on training data only",
+    "random_seed": 42,
+    "class_balancing": "inverse-frequency sample weights fitted on training/development data only",
+    "hyperparameters": {
+      "learning_rate": 0.06,
+      "max_iter": 180,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 25,
+      "l2_regularization": 1.0
+    },
+    "validation": {
+      "accuracy": 0.8694,
+      "balanced_accuracy": 0.8701,
+      "precision": 0.892,
+      "recall": 0.8591,
+      "f1": 0.8752,
+      "shortfall_recall": 0.8591,
+      "roc_auc": 0.9314,
+      "pr_auc": 0.9459,
+      "confusion_matrix": {
+        "non_shortfall": {
+          "non_shortfall": 230,
+          "shortfall": 31
+        },
+        "shortfall": {
+          "non_shortfall": 42,
+          "shortfall": 256
+        }
+      }
+    },
+    "test": {
+      "accuracy": 0.8981,
+      "balanced_accuracy": 0.8957,
+      "precision": 0.929,
+      "recall": 0.85,
+      "f1": 0.8877,
+      "shortfall_recall": 0.85,
+      "roc_auc": 0.9543,
+      "pr_auc": 0.9582,
+      "confusion_matrix": {
+        "non_shortfall": {
+          "non_shortfall": 209,
+          "shortfall": 13
+        },
+        "shortfall": {
+          "non_shortfall": 30,
+          "shortfall": 170
+        }
+      }
+    },
+    "unseen_user": {
+      "accuracy": 0.9643,
+      "balanced_accuracy": 0.7105,
+      "precision": 0.9706,
+      "recall": 0.9925,
+      "f1": 0.9814,
+      "shortfall_recall": 0.9925,
+      "roc_auc": 0.8648,
+      "pr_auc": 0.9891,
+      "confusion_matrix": {
+        "non_shortfall": {
+          "non_shortfall": 9,
+          "shortfall": 12
+        },
+        "shortfall": {
+          "non_shortfall": 3,
+          "shortfall": 396
+        }
+      }
+    }
+  },
+  "user_disjoint_split": {
+    "development_users": 168,
+    "validation_users": 36,
+    "unseen_users": 37,
+    "development_intersection_validation": 0,
+    "development_intersection_unseen": 0,
+    "validation_intersection_unseen": 0,
+    "rubric": "STRONG >=0.70 and improvement >=0.05; MODERATE >=0.60 and improvement >=0.05; LIMITED >=0.55 or improvement 0.02-0.05; otherwise NOT PROVEN."
+  },
+  "threshold": {
+    "value": 0.5,
+    "selection": "default; frozen before temporal test"
+  },
+  "calibration": {
+    "probability_exposed": false,
+    "reason": "Calibration was not established; API exposes categorical risk only."
+  },
+  "acceptance": {
+    "validation_balanced_accuracy_improvement": 0.084,
+    "test_balanced_accuracy_improvement": 0.1084,
+    "decision": "ML_ACCEPTED"
+  },
+  "artifact": {
+    "path": "V:\\MAJOR PROJECT\\finsight-main\\finsight-main\\backend\\app\\ml\\saved_models\\financial_shortfall\\v1.0\\model.pkl",
+    "schema": [
+      "previous_income",
+      "income_3m",
+      "income_6m",
+      "income_trend",
+      "income_volatility",
+      "income_stability",
+      "previous_committed",
+      "committed_3m",
+      "committed_6m",
+      "commitment_ratio",
+      "commitment_count",
+      "commitment_growth",
+      "subscription_burden",
+      "emi_burden",
+      "bnpl_burden",
+      "recurring_payment_burden",
+      "commitment_diversity",
+      "previous_variable",
+      "variable_3m",
+      "variable_6m",
+      "variable_trend",
+      "variable_volatility",
+      "discretionary_spending",
+      "category_growth",
+      "category_volatility",
+      "previous_net_cash",
+      "net_cash_3m",
+      "net_cash_6m",
+      "minimum_net_cash",
+      "net_cash_volatility",
+      "positive_cash_frequency",
+      "negative_cash_frequency",
+      "payment_success_rate",
+      "failed_transaction_rate",
+      "pending_transaction_rate",
+      "payment_reliability",
+      "total_monthly_commitments",
+      "active_recurring_count",
+      "commitment_burden",
+      "commitment_change",
+      "expected_income",
+      "expected_committed_expenses",
+      "expected_variable_expenses",
+      "expected_total_expenses",
+      "expected_net_cash"
+    ]
+  },
+  "generated_at": "2026-10-07T14:09:13.836589+00:00",
+  "runtime": {
+    "live_prediction": "PASS",
+    "integration_with_model1": "PASS: expected financial values come from CashFlowForecastService; Model 4 classification is separate.",
+    "authentication": "PASS: JWT required.",
+    "tenant_isolation": "PASS: cross-user requests rejected with HTTP 403.",
+    "insufficient_history": "PASS: available=false and no fabricated risk.",
+    "artifact_fallback": "PASS: deterministic baseline path remains implemented when artifact loading fails."
+  },
+  "testing": {
+    "focused_tests": "6 passed (tests/test_shortfall_model4.py and tests/test_shortfall_api.py)",
+    "compile": "PASS: python -m compileall backend/app backend/scripts",
+    "diff_check": "PASS: git diff --check",
+    "full_backend_suite": "completed separately; unrelated failures reported in final handoff"
+  },
+  "limitations": [
+    "Reference dataset is the existing application dataset with 241 users and 11,365 transactions.",
+    "Shortfall is an observed next-calendar-month transaction outcome, not a guaranteed future event.",
+    "Unseen-user evidence is user-disjoint but remains limited by the reference population size.",
+    "No calibrated probability is exposed.",
+    "Users with fewer than six historical months receive an honest unavailable response."
+  ]
+}

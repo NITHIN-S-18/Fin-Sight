@@ -1,0 +1,206 @@
+{
+  "calibration_model_a": [
+    {
+      "bin": 0,
+      "bin_range": [
+        0.0,
+        0.1
+      ],
+      "count": 69,
+      "mean_pred_prob": 0.0621,
+      "empirical_positive_rate": 0.058
+    },
+    {
+      "bin": 1,
+      "bin_range": [
+        0.1,
+        0.2
+      ],
+      "count": 58,
+      "mean_pred_prob": 0.151,
+      "empirical_positive_rate": 0.0345
+    },
+    {
+      "bin": 2,
+      "bin_range": [
+        0.2,
+        0.3
+      ],
+      "count": 52,
+      "mean_pred_prob": 0.2455,
+      "empirical_positive_rate": 0.1923
+    },
+    {
+      "bin": 3,
+      "bin_range": [
+        0.3,
+        0.4
+      ],
+      "count": 31,
+      "mean_pred_prob": 0.3372,
+      "empirical_positive_rate": 0.1935
+    },
+    {
+      "bin": 4,
+      "bin_range": [
+        0.4,
+        0.5
+      ],
+      "count": 21,
+      "mean_pred_prob": 0.4407,
+      "empirical_positive_rate": 0.2381
+    },
+    {
+      "bin": 5,
+      "bin_range": [
+        0.5,
+        0.6
+      ],
+      "count": 13,
+      "mean_pred_prob": 0.5485,
+      "empirical_positive_rate": 0.3077
+    },
+    {
+      "bin": 6,
+      "bin_range": [
+        0.6,
+        0.7
+      ],
+      "count": 5,
+      "mean_pred_prob": 0.6481,
+      "empirical_positive_rate": 0.6
+    },
+    {
+      "bin": 7,
+      "bin_range": [
+        0.7,
+        0.8
+      ],
+      "count": 8,
+      "mean_pred_prob": 0.7612,
+      "empirical_positive_rate": 0.625
+    },
+    {
+      "bin": 8,
+      "bin_range": [
+        0.8,
+        0.9
+      ],
+      "count": 11,
+      "mean_pred_prob": 0.8581,
+      "empirical_positive_rate": 0.7273
+    },
+    {
+      "bin": 9,
+      "bin_range": [
+        0.9,
+        1.0
+      ],
+      "count": 154,
+      "mean_pred_prob": 0.9747,
+      "empirical_positive_rate": 0.9935
+    }
+  ],
+  "calibration_model_b": [
+    {
+      "bin": 0,
+      "bin_range": [
+        0.0,
+        0.1
+      ],
+      "count": 130,
+      "mean_pred_prob": 0.044,
+      "empirical_positive_rate": 0.0308
+    },
+    {
+      "bin": 1,
+      "bin_range": [
+        0.1,
+        0.2
+      ],
+      "count": 45,
+      "mean_pred_prob": 0.1527,
+      "empirical_positive_rate": 0.1556
+    },
+    {
+      "bin": 2,
+      "bin_range": [
+        0.2,
+        0.3
+      ],
+      "count": 26,
+      "mean_pred_prob": 0.2423,
+      "empirical_positive_rate": 0.2692
+    },
+    {
+      "bin": 3,
+      "bin_range": [
+        0.3,
+        0.4
+      ],
+      "count": 21,
+      "mean_pred_prob": 0.3533,
+      "empirical_positive_rate": 0.1905
+    },
+    {
+      "bin": 4,
+      "bin_range": [
+        0.4,
+        0.5
+      ],
+      "count": 15,
+      "mean_pred_prob": 0.4464,
+      "empirical_positive_rate": 0.4
+    },
+    {
+      "bin": 5,
+      "bin_range": [
+        0.5,
+        0.6
+      ],
+      "count": 8,
+      "mean_pred_prob": 0.5445,
+      "empirical_positive_rate": 0.625
+    },
+    {
+      "bin": 6,
+      "bin_range": [
+        0.6,
+        0.7
+      ],
+      "count": 11,
+      "mean_pred_prob": 0.6371,
+      "empirical_positive_rate": 0.5455
+    },
+    {
+      "bin": 7,
+      "bin_range": [
+        0.7,
+        0.8
+      ],
+      "count": 4,
+      "mean_pred_prob": 0.7455,
+      "empirical_positive_rate": 0.75
+    },
+    {
+      "bin": 8,
+      "bin_range": [
+        0.8,
+        0.9
+      ],
+      "count": 14,
+      "mean_pred_prob": 0.8629,
+      "empirical_positive_rate": 0.7857
+    },
+    {
+      "bin": 9,
+      "bin_range": [
+        0.9,
+        1.0
+      ],
+      "count": 148,
+      "mean_pred_prob": 0.9758,
+      "empirical_positive_rate": 0.9932
+    }
+  ]
+}

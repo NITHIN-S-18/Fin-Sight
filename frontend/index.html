@@ -1,0 +1,36 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>finsight++</title>
+      <meta name="description" content="Optimizes content to deliver high-quality, effective output for users seeking the best results from their input or projects." />
+      <meta name="robots" content="noindex, nofollow" />
+      <script>
+        (function() {
+          try {
+            var saved = localStorage.getItem('finsight-theme');
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var isDark = saved === 'dark' || ((!saved || saved === 'system') && prefersDark);
+            if (isDark) {
+              document.documentElement.classList.add('dark');
+            } else {
+              document.documentElement.classList.remove('dark');
+            }
+          } catch (e) {}
+        })();
+      </script>
+      <style>html, body { height: 100%; margin: 0; } #root { height: 100%; }</style>
+      
+    </head>
+
+    <body>
+      
+      <div id="root"></div>
+      <script type="module" src="/src/main.tsx"></script>
+      
+    </body>
+  </html>
+  

@@ -1,0 +1,121 @@
+{
+  "ablation_results": {
+    "A_baseline_27": {
+      "feature_count": 27,
+      "average_precision": 0.9564,
+      "roc_auc": 0.9446,
+      "balanced_accuracy": 0.892,
+      "f1": 0.8849,
+      "brier_score": 0.0834
+    },
+    "A_plus_commit_history_ratios": {
+      "feature_count": 33,
+      "average_precision": 0.9604,
+      "roc_auc": 0.9572,
+      "balanced_accuracy": 0.9102,
+      "f1": 0.9039,
+      "brier_score": 0.0716
+    },
+    "A_plus_commit_burdens_diversity": {
+      "feature_count": 32,
+      "average_precision": 0.9545,
+      "roc_auc": 0.943,
+      "balanced_accuracy": 0.8882,
+      "f1": 0.8822,
+      "brier_score": 0.0856
+    },
+    "A_plus_commit_projections": {
+      "feature_count": 30,
+      "average_precision": 0.9598,
+      "roc_auc": 0.9516,
+      "balanced_accuracy": 0.8937,
+      "f1": 0.886,
+      "brier_score": 0.077
+    },
+    "B_all_41": {
+      "feature_count": 41,
+      "average_precision": 0.9617,
+      "roc_auc": 0.9561,
+      "balanced_accuracy": 0.9007,
+      "f1": 0.8935,
+      "brier_score": 0.0745
+    }
+  },
+  "permutation_importances_model_b": [
+    {
+      "feature": "commitment_ratio",
+      "importance_mean": 0.07443,
+      "importance_std": 0.01057
+    },
+    {
+      "feature": "previous_committed",
+      "importance_mean": 0.02302,
+      "importance_std": 0.00511
+    },
+    {
+      "feature": "income_volatility",
+      "importance_mean": 0.00642,
+      "importance_std": 0.00171
+    },
+    {
+      "feature": "previous_net_cash",
+      "importance_mean": 0.0042,
+      "importance_std": 0.00285
+    },
+    {
+      "feature": "net_cash_6m",
+      "importance_mean": 0.00395,
+      "importance_std": 0.00101
+    },
+    {
+      "feature": "commitment_growth",
+      "importance_mean": 0.00277,
+      "importance_std": 0.00111
+    },
+    {
+      "feature": "net_cash_3m",
+      "importance_mean": 0.00194,
+      "importance_std": 0.00101
+    },
+    {
+      "feature": "expected_net_cash",
+      "importance_mean": 0.00168,
+      "importance_std": 0.00087
+    },
+    {
+      "feature": "category_growth",
+      "importance_mean": 0.00159,
+      "importance_std": 0.00131
+    },
+    {
+      "feature": "emi_burden",
+      "importance_mean": 0.00106,
+      "importance_std": 0.00031
+    },
+    {
+      "feature": "expected_total_expenses",
+      "importance_mean": 0.00058,
+      "importance_std": 0.00047
+    },
+    {
+      "feature": "payment_success_rate",
+      "importance_mean": 0.00042,
+      "importance_std": 0.00115
+    },
+    {
+      "feature": "net_cash_volatility",
+      "importance_mean": 0.00041,
+      "importance_std": 0.00061
+    },
+    {
+      "feature": "minimum_net_cash",
+      "importance_mean": 0.00039,
+      "importance_std": 0.00028
+    },
+    {
+      "feature": "pending_transaction_rate",
+      "importance_mean": 0.0002,
+      "importance_std": 9e-05
+    }
+  ]
+}
